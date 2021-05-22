@@ -496,9 +496,9 @@ void Network::BackPropagation(double prediction, double rightResult, double lr) 
     }
 }
 
-bool Network::SaveWeights() {
+bool Network::SaveWeights(const std::string& fileName) {
     std::ofstream fout;
-    fout.open("weights.txt");
+    fout.open(fileName);
     for (int i = 0; i < layers; i++) {
         if (i < layers - 1) {
             for (int j = 0; j < size[i]; j++) {

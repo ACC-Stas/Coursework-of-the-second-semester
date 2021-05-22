@@ -21,8 +21,8 @@ public:
     double*** weights{};
     int* size{};
     int threadsNum = 1; // int(thread::hardware_concurrency());
-    static double sigmaDerivative(double x);
-    static double predict(double x);
+    double sigmaDerivative(double x);
+    double predict(double x);
     void setLayersNotStudy(int n, int* p, std::string filename);
     void setLayers(int n, int* p);
     void setRandomInput();
@@ -35,7 +35,7 @@ public:
     void ErrorCounter(int LayerNumber, int start, int stop, double prediction, double rightResult, double lr);
     void WeightsUpdater(int start, int stop, int LayerNum, int lr);
     void BackPropagation(double prediction, double rightResult, double lr);
-    bool SaveWeights();
+    bool SaveWeights(const std::string& fileName = "weights.txt");
 };
 
 #endif //UNTITLED1_NETWORK_H
