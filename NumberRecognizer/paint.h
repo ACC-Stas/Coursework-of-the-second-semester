@@ -22,16 +22,10 @@ public:
 
 private:
     Ui::Paint *ui;
-    QTimer *timer;      /* Определяем таймер для подготовки актуальных размеров
-                         * графической сцены
-                         * */
-    paintScene *scene;  // Объявляем кастомную графическую сцену
-    QLabel* lbl;
+    QTimer *timer;
+    paintScene *scene;
 
 private:
-    /* Переопределяем событие изменения размера окна
-     * для пересчёта размеров графической сцены
-     * */
     void resizeEvent(QResizeEvent * event);
     void getNumber();
     void clean();
